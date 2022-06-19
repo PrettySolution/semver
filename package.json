@@ -1,0 +1,58 @@
+{
+  "name": "semver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Runnint tests\" && exit 0",
+    "semantic-release": "semantic-release",
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrettySolution/semver.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrettySolution/semver/issues"
+  },
+  "homepage": "https://github.com/PrettySolution/semver#readme",
+  "devDependencies": {
+    "@semantic-release-plus/docker": "^3.1.2",
+    "@semantic-release/exec": "^6.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "semantic-release": "^19.0.3"
+  },
+  "release": {
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer"
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "docker build -t containersolution/semver ."
+        }
+      ],
+      [
+        "@semantic-release-plus/docker",
+        {
+          "name": "containersolution/semver"
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator"
+      ],
+      [
+        "@semantic-release/github"
+      ]
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
