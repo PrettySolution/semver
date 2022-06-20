@@ -1,4 +1,4 @@
-{
+module.exports = {
   "plugins": [
     [
       "@semantic-release/commit-analyzer"
@@ -7,7 +7,7 @@
       "@semantic-release/exec",
       {
         "prepareCmd": "scripts/prepare.sh",
-        "successCmd": "scripts/success.sh ${nextRelease.version} ${DOCKER_USERNAME}"
+        "successCmd": "scripts/success.sh ${nextRelease.version}"
       }
     ],
     [
