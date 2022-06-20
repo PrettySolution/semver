@@ -1,1 +1,1 @@
-helm push cortex-app-"$1".tgz oci://249111255442.dkr.ecr.eu-central-1.amazonaws.com/
+helm push cortex-app-"$1".tgz oci://public.ecr.aws/n8q4i9t5/cortex-app/
