@@ -11,6 +11,7 @@ on:
 env:
   DOCKER_USERNAME: containersolution
   DOCKER_REPOSITORY_NAME: semver
+  #DOCKER_REPOSITORY: '$(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(DOCKER_REPOSITORY_NAME)'
 
 jobs:
 
@@ -19,6 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - uses: actions/setup-node@v3
         with:
