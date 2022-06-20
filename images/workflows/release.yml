@@ -33,7 +33,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - run: npm install -g semantic-release @semantic-release/exec semantic-release-plugin-update-version-in-files
+      - run: npm install -g semantic-release @semantic-release/exec semantic-release-plus @semantic-release-plus/docker
       - run: semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
