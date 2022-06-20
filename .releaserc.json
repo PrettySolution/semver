@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer"
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "echo ${nextRelease.version}",
+        "successCmd": "echo ${nextRelease.version}"
+      }
+    ],
+    [
+      "@semantic-release-plus/docker",
+      {
+        "name": "containersolution/semver"
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator"
+    ],
+    [
+      "@semantic-release/github"
+    ]
+  ]
+}
