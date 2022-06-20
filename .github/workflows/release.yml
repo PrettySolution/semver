@@ -11,7 +11,7 @@ on:
 env:
   DOCKER_USERNAME: containersolution
   DOCKER_REPOSITORY_NAME: semver
-  AWS_REGION: us-west-2
+  AWS_REGION: eu-central-1
   #DOCKER_REPOSITORY: '$(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(DOCKER_REPOSITORY_NAME)'
 
 jobs:
