@@ -6,8 +6,8 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "prepare.sh",
-        "successCmd": "success.sh"
+        "prepareCmd": "scripts/prepare.sh",
+        "successCmd": "scripts/success.sh ${nextRelease.version}"
       }
     ],
     [
