@@ -1,1 +1,1 @@
-docker build -t "$1" .
+helm package cortex-app

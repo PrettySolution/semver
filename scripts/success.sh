@@ -1,2 +1,1 @@
-echo "version: $1"
-env
+helm push cortex-app-"$1".tgz oci://249111255442.dkr.ecr.eu-central-1.amazonaws.com/
