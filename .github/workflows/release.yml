@@ -10,6 +10,7 @@ on:
 
 env:
   DOCKER_USERNAME: containersolution
+  DOCKER_REPOSITORY_NAME: semver
 
 jobs:
 

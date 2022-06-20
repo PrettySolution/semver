@@ -7,13 +7,13 @@ module.exports = {
       "@semantic-release/exec",
       {
         "prepareCmd": "scripts/prepare.sh",
-        "successCmd": "scripts/success.sh ${nextRelease.version} ${process.env.DOCKER_USERNAME}"
+        "successCmd": "scripts/success.sh ${process.env.DOCKER_USERNAME}/${DOCKER_REPOSITORY_NAME}:${nextRelease.version}"
       }
     ],
     [
       "@semantic-release-plus/docker",
       {
-        "name": "containersolution/semver"
+        "name": "${process.env.DOCKER_USERNAME}/${process.env.DOCKER_REPOSITORY_NAME}"
       }
     ],
     [
