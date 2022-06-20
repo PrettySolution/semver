@@ -6,7 +6,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "echo ${nextRelease.version}",
+        "prepareCmd": "docker build -t containersolution/semver .",
         "successCmd": "echo ${nextRelease.version}"
       }
     ],
