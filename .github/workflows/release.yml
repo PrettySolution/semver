@@ -28,7 +28,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
-      ### log in to ECR
+      ### log in to ECR HI
       - run: aws ecr get-login-password | docker login --username AWS --password-stdin 249111255442.dkr.ecr.eu-central-1.amazonaws.com
 
       - uses: actions/setup-node@v3
