@@ -1,1 +1,1 @@
-docker build -t containersolution/semver .
+docker build -t "$1" .
