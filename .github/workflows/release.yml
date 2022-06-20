@@ -11,6 +11,7 @@ on:
 env:
   DOCKER_USERNAME: containersolution
   DOCKER_REPOSITORY_NAME: semver
+  AWS_REGION: us-west-2
   #DOCKER_REPOSITORY: '$(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com/$(DOCKER_REPOSITORY_NAME)'
 
 jobs:
@@ -25,7 +26,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-west-2
+          aws-region: ${{ env.AWS_REGION }}
 
       - uses: actions/setup-node@v3
         with:
